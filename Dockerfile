@@ -1,6 +1,6 @@
 FROM golang:1.20-alpine AS build
 
-WORKDIR /app
+WORKDIR /app/api
 
 # go.mod と go.sum をコピー
 COPY api/go.mod api/go.sum ./
@@ -18,7 +18,7 @@ FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 
-COPY --from=build /app/emo_tracking /usr/local/bin/emo_tracking
+COPY --from=build /app/api/emo_tracking /usr/local/bin/emo_tracking
 
 EXPOSE 8080
 

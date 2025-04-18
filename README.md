@@ -5,4 +5,4 @@
 - リポジトリをクローン
 - リポジトリのディレクトリに移動
 - `docker compose up -d --build` でコンテナを立ち上げ
-- ブラウザで`localhost:8080`にアクセス
+- ブラウザで`http://localhost:8080/ping`にアクセス

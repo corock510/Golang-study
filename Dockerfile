@@ -2,11 +2,11 @@ FROM golang:1.20-alpine AS build
 
 WORKDIR /app/api
 
-# go.mod と go.sum をコピー
+# 依存関係ファイルを先にコピー
 COPY api/go.mod api/go.sum ./
 
 # 依存関係をインストール
-RUN go mod tidy
+RUN go mod download
 
 # アプリケーションのソースコードをコピー
 COPY api/ ./
